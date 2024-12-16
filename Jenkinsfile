@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven 3.x' // Assurez-vous que Maven est installé et configuré dans Jenkins
+        maven 'Maven 3.x' // Assurez-vous que Maven est installé et configuré dans Jenkins Ok
     }
     stages {
         stage('Checkout') {
