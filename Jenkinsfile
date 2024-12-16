@@ -11,7 +11,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                // Naviguer vers le répertoire videotheque-jee
+                // Aller directement dans videotheque-jee
                 dir('videotheque-jee') {
                     // Exécuter Maven pour nettoyer et installer le projet
                     sh 'mvn clean install'
