@@ -1,3 +1,4 @@
 Auth\HelloServlet.class
-Auth\HomeServlet.class
 Auth\LoginServlet.class
+Auth\DefaultRedirectServlet.class
+Auth\HomeServlet.class

@@ -14,7 +14,7 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         request.getSession().setAttribute("user", username);
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("home.jsp");
 //        if ("admin".equals(username) && "password".equals(password)) {
 //            request.getSession().setAttribute("user", username);
 //            response.sendRedirect("welcome.jsp");

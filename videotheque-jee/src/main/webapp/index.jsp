@@ -69,7 +69,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-            		<h1 class="home__title"><b>Popular Movies</b> This Season</h1>
+            		<h1 class="home__title"><b>Popular Movies</b> This Season 2</h1>
 				</div>
 
 				<!-- Movies Carousel -->

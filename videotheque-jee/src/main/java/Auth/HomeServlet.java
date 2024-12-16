@@ -71,6 +71,6 @@ public class HomeServlet extends HttpServlet {
         }
 
         // Transférer vers la JSP
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 }
