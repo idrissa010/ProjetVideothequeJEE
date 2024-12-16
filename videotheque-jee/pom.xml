@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
   <artifactId>videotheque-jee</artifactId>
@@ -7,6 +7,7 @@
   <version>1.0-SNAPSHOT</version>
   <name>videotheque-jee Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -46,22 +47,42 @@
       <version>4.11.0</version> <!-- Utilisez la dernière version disponible -->
     </dependency>
   </dependencies>
+
   <build>
     <finalName>videotheque-jee</finalName>
+
     <plugins>
+      <!-- Maven Compiler Plugin pour Java 17 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.3.2</version> <!-- Mise à jour vers la version 3.3.2 -->
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
         <configuration>
           <source>17</source> <!-- Java 17 pour le code source -->
           <target>17</target> <!-- Java 17 pour le bytecode généré -->
         </configuration>
       </plugin>
+
+      <!-- Maven WAR Plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.2</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>com.example.Main</mainClass> <!-- Remplacez par la classe principale si nécessaire -->
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <!-- Tomcat Plugin -->
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
-        <version>3.0.0</version> <!-- Mise à jour vers la version 3.0.0 -->
+        <version>3.0.0</version>
         <configuration>
           <url>http://localhost:8080/manager/text</url>
           <server>tomcat</server>
@@ -71,4 +92,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>
