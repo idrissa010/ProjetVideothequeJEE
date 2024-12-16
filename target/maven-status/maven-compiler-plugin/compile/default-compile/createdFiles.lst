@@ -1,0 +1,4 @@
+Auth/HelloServlet.class
+Auth/LoginServlet.class
+Auth/HomeServlet.class
+Auth/DefaultRedirectServlet.class
