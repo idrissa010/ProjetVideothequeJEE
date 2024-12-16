@@ -1,28 +1,21 @@
 pipeline {
     agent any
-    tools {
-        maven 'Maven 3.x' // Assurez-vous que Maven est installé et configuré dans Jenkins Ok
-    }
+
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/idrissa010/ProjetVideothequeJEE.git'
+                // Cloner le dépôt Git
+                git 'https://github.com/idrissa010/ProjetVideothequeJEE.git'
             }
         }
+
         stage('Build') {
             steps {
-                sh 'mvn clean install'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying application...'
-                // Ajoutez ici des étapes spécifiques pour déployer votre application
+                // Naviguer vers le répertoire videotheque-jee
+                dir('videotheque-jee') {
+                    // Exécuter Maven pour nettoyer et installer le projet
+                    sh 'mvn clean install'
+                }
             }
         }
     }
